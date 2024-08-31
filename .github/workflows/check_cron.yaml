@@ -32,7 +32,7 @@ jobs:
 
             echo "echo \"Executing for $username@$ssh\"" >> sshpass.sh
 
-            echo "sshpass -p '$password' ssh -o StrictHostKeyChecking=no '$username@$ssh' 'bash <(curl -s https://raw.githubusercontent.com/z1196/vless-for-serv00/main/check_cron.sh)'" >> sshpass.sh
+            echo "sshpass -p '$password' ssh -o StrictHostKeyChecking=no '$username@$ssh' 'bash <(curl -s https://raw.githubusercontent.com/z1196/serv00-ct8/main/serv00_ct8_cron.sh)'" >> sshpass.sh
           done < <(jq -c '.[]' accounts.json)      #循环执行
           chmod +x sshpass.sh            #授予可执行权限
 
